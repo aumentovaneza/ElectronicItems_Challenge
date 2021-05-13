@@ -1,26 +1,46 @@
 <?php
 require_once('ElectronicItem.php');
 
+/**
+ * Class Console
+ */
 class Console extends ElectronicItem
 {
     private $extras = [];
 
+    /**
+     * Console constructor.
+     * @param $price
+     */
     public function __construct($price)
     {
         $this->setPrice($price);
         $this->setType('console');
     }
 
+    /**
+     * Returns the Console object
+     * @return $this
+     */
     public function item()
     {
         return $this;
     }
 
+    /**
+     * Gets the extras set
+     * @return array
+     */
     public function get_extras()
     {
         return $this->extras;
     }
 
+    /**
+     * Add extras for the electronic item
+     * @param $item
+     * @return string
+     */
     public function add_extra($item)
     {
         $max = $this->maxExtras($this->getType());
@@ -33,6 +53,10 @@ class Console extends ElectronicItem
         }
     }
 
+    /**
+     * Get the total price of the electronic item, including extras.
+     * @return int|mixed
+     */
     public function getTotal()
     {
         $total = 0;

@@ -1,16 +1,26 @@
 <?php
 
-
+/**
+ * Class ElectronicItems
+ */
 class ElectronicItems
 {
 
     private $items = array();
 
+    /**
+     * ElectronicItems constructor.
+     * @param array $items
+     */
     public function __construct(array $items)
     {
         $this->items = $items;
     }
 
+    /**
+     * Sort items by price and return sorted items
+     * @return array
+     */
     public function getSortedItems()
     {
         $sorted = array();
@@ -24,6 +34,11 @@ class ElectronicItems
         return $sorted;
     }
 
+    /**
+     * Get items by type
+     * @param $type
+     * @return array|null
+     */
     public function getItemsByType($type)
     {
         $items = null;
@@ -39,6 +54,10 @@ class ElectronicItems
         return $items;
     }
 
+    /**
+     * Added a new function to get the total of all of the electronic items
+     * @return int
+     */
     public function getAllTotal()
     {
         $total = 0;

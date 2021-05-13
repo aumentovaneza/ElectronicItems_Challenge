@@ -35,6 +35,7 @@ foreach ($samsungExtras as $extra){
     $samsung->add_extra($extra);
 }
 
+// Set bought items
 $boughtItems = [
     $playstation->item(),
     $toshiba->item(),
@@ -42,13 +43,18 @@ $boughtItems = [
     $microwave->item()
 ];
 
+// Instantiate Electronic Items object
 $electronicItems = new ElectronicItems($boughtItems);
 
 $returnArray = [
     "total_price"   => $electronicItems->getAllTotal(),
     "sorted_items"  => $electronicItems->getSortedItems()
 ];
+
+// Answer to Question 1
 print_r("Price Total and Sorted Array: \n");
 print_r($returnArray);
+
+// Answer to Question 2
 print_r("Console w/ remotes total cost: \n");
 print_r($playstation->getTotal());
